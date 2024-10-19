@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afbcb72d-6f7f-43bb-b5df-c050de0f83a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/simpleWebApplication.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simpleWebApplication/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleWebApplication/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Controllers/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Controllers/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Services/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Services/ProductService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +29,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="origin/sausaq" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -41,12 +37,12 @@
     &quot;assignee&quot;: &quot;rasu1h&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/rasu1h/webDemo.git",
-    "accountId": "403e4062-3155-4b72-ab55-0bafdf19907a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/rasu1h/webDemo.git&quot;,
+    &quot;accountId&quot;: &quot;e3e66a61-7536-49b0-bd90-058dff0203fc&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -63,33 +59,18 @@
     "Application.SimpleWebApplication.executor": "Run",
     "Maven.simpleWebApplication [deploy].executor": "Run",
     "Maven.simpleWebApplication [install].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.SimpleWebApplication.executor": "Run",
-    "git-widget-placeholder": "sausaq",
-    "ignore.virus.scanning.warn.message": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Расул/IdeaProjects/untitled5/IT2-2203-Web-Component-Development-Java-EE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "C:/Users/Madi/AppData/Roaming/JetBrains/IntelliJIdea2024.2/node/versions/20.18.0/node",
     "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "npm.run.executor": "Run",
-    "settings.editor.selected.configurable": "settings.nodejs",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
-    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -97,13 +78,15 @@
       <recent name="C:\Users\Расул\Downloads\simpleWebApplication\simpleWebApplication\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SimpleWebApplication">
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
+      <module name="simpleWebApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="simpleWebApplication" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -117,26 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/simpleWebApplication/ecom-frontend-5-main/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="npm.dev" />
-      <item itemvalue="Spring Boot.SimpleWebApplication" />
-    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
       </set>
     </attachedChunks>
   </component>
@@ -149,27 +118,12 @@
       <option name="presentableId" value="Default" />
       <updated>1725446379196</updated>
       <workItem from="1728229663267" duration="292000" />
-      <workItem from="1728233558381" duration="1266000" />
-      <workItem from="1729245265712" duration="3251000" />
+      <workItem from="1728233558381" duration="3205000" />
+      <workItem from="1729277739297" duration="185000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
