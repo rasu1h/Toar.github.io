@@ -38,4 +38,10 @@ private boolean available;
 
 @Column(nullable = false, columnDefinition = "int default 1")
 private int quantity;
+
+private String imageName;
+private String imageType;
+
+@Lob
+private byte[] imageData;
 }

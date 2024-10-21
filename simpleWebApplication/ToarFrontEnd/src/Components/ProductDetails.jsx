@@ -1,4 +1,3 @@
-// ProductDetails.jsx
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -8,13 +7,23 @@ function ProductDetails() {
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [imageData, setImageData] = useState(null); // Add state for image data
 
-    // Функция для получения информации о конкретном продукте
     const fetchProduct = async () => {
         setLoading(true);
         try {
             const response = await axios.get(`http://localhost:8080/api/products/${id}`);
-            setProduct(response.data);
+            const productData = response.data;
+
+            // Assuming imageData is stored as byte array in response.data.imageData
+            if (productData.imageData) {
+                const base64Image = btoa(
+                    new Uint8Array(productData.imageData).reduce((data, byte) => data + String.fromCharCode(byte), "")
+                );
+                setImageData(`data:${productData.imageType};base64,${base64Image}`);
+            }
+
+            setProduct(productData);
         } catch (error) {
             setError("Не удалось загрузить информацию о продукте");
         } finally {
@@ -38,6 +47,7 @@ function ProductDetails() {
         <div>
             {product ? (
                 <div>
+                    {imageData ? <img src={imageData} alt={product.brand} /> : <p>Загрузка изображения...</p>}
                     <h2>{product.name}</h2>
                     <p>{product.description}</p>
                     <p>Цена: {product.price}</p>
@@ -49,4 +59,4 @@ function ProductDetails() {
     );
 }
 
-export default ProductDetails; // Убедитесь, что экспорт по умолчанию присутствует
+export default ProductDetails;
