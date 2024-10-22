@@ -1,35 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Хук для навигации
 
 function Product() {
-    const [products, setProducts] = useState([]);
+    const { id } = useParams(); // Получаем ID продукта из параметров маршрута
+    const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const navigate = useNavigate(); // Используем useNavigate для перенаправления
+    const [imageData, setImageData] = useState(null); // Add state for image data
 
-    const fetchProducts = async () => {
+    const fetchProduct = async () => {
         setLoading(true);
         try {
-            const response = await axios.get("http://localhost:8080/api/products");
-            setProducts(response.data);
+            const response = await axios.get(`http://localhost:8080/api/products/${id}`);
+            const productData = response.data;
+
+            // Assuming imageData is stored as byte array in response.data.imageData
+            if (productData.imageData) {
+                const base64Image = btoa(
+                    new Uint8Array(productData.imageData).reduce((data, byte) => data + String.fromCharCode(byte), "")
+                );
+                setImageData(`data:${productData.imageType};base64,${base64Image}`);
+            }
+
+            setProduct(productData);
         } catch (error) {
-            setError("Не удалось получить продукты");
+            setError("Не удалось загрузить информацию о продукте");
         } finally {
             setLoading(false);
         }
     };
 
     useEffect(() => {
-        fetchProducts();
-    }, []);
-
-    // Функция для обработки клика по продукту и перенаправления
-    const handleClick = (product) => {
-
-        navigate(`/product/${product.id}`); // Перенаправление на страницу с подробностями продукта
-    };
-    
+        fetchProduct(); // Запрашиваем данные при загрузке страницы
+    }, [id]);
 
     if (loading) {
         return <p>Загрузка...</p>;
@@ -40,20 +44,16 @@ function Product() {
     }
 
     return (
-        <div id="grid">
-            {products.length > 0 ? (
-                products.map((product) => (
-                    <div
-                        key={product.id}
-                        className="product"
-                        onClick={() => handleClick(product)} // Обработка клика
-                        style={{ cursor: "pointer", padding: "10px", background: "#eee", margin: "10px" }}
-                    >
-                        <h2>{product.name}</h2>
-                    </div>
-                ))
+        <div>
+            {product ? (
+                <div>
+                    {imageData ? <img src={imageData} alt={product.brand} /> : <p>Загрузка изображения...</p>}
+                    <h2>{product.name}</h2>
+                    <p>{product.description}</p>
+                    <p>Цена: {product.price}</p>
+                </div>
             ) : (
-                <p>Нет доступных продуктов</p>
+                <p>Продукт не найден</p>
             )}
         </div>
     );
