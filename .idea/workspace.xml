@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afbcb72d-6f7f-43bb-b5df-c050de0f83a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bcd871e4-5ee5-4353-9241-0b7c91aefffd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bcd871e4-5ee5-4353-9241-0b7c91aefffd.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bcd871e4-5ee5-4353-9241-0b7c91aefffd/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bcd871e4-5ee5-4353-9241-0b7c91aefffd/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/simpleWebApplication.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleWebApplication/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Controllers/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Controllers/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Services/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Services/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleWebApplication/src/main/java/com/rassul/simpleWebApplication/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/src/main/java/com/rassul/simpleWebApplication/Controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleWebApplication/src/main/java/com/rassul/simpleWebApplication/Exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/src/main/java/com/rassul/simpleWebApplication/Exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleWebApplication/src/main/java/com/rassul/simpleWebApplication/Models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/src/main/java/com/rassul/simpleWebApplication/Models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleWebApplication/src/main/java/com/rassul/simpleWebApplication/SimpleWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/src/main/java/com/rassul/simpleWebApplication/SimpleWebApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Models/Product.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +62,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.SimpleWebApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "sausaq",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Расул/IdeaProjects/untitled5/IT2-2203-Web-Component-Development-Java-EE",
     "node.js.detected.package.eslint": "true",
@@ -79,19 +79,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="simpleWebApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="simpleWebApplication" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SimpleWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="simpleWebApplication" />

@@ -2,7 +2,7 @@ package com.rassul.simpleWebApplication.Controllers;
 
 import com.rassul.simpleWebApplication.Models.Product;
 import com.rassul.simpleWebApplication.Services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,9 +12,10 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("/api")
+@AllArgsConstructor
 public class    ProductController {
-    @Autowired
-    ProductService service;
+    private final ProductService service;
+
     @GetMapping("/products")
     public ResponseEntity <List<Product>> getAllProducts(){
         return new ResponseEntity<>(service.getProduct(), HttpStatus.OK) ;
