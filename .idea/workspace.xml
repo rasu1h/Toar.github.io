@@ -4,32 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afbcb72d-6f7f-43bb-b5df-c050de0f83a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/simpleWebApplication.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleWebApplication/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Controllers/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Controllers/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Services/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/simpleWebApplication/target/classes/com/rassul/simpleWebApplication/Services/ProductService.class" afterDir="false" />
-    </list>
+    <list default="true" id="cbc7f782-69b7-4cd4-bc54-5c9026c6b4c9" name="Changes" comment="unversion files update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Interface" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Back-End" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -43,63 +25,32 @@
     &quot;accountId&quot;: &quot;e3e66a61-7536-49b0-bd90-058dff0203fc&quot;
   }
 }</component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2lbQd203irCEr42MU3vGslAMhpW" />
+  <component name="ProjectId" id="2oTYgX6am6oQWm0AhmoHLcFHH30" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.SimpleWebApplication.executor": "Run",
-    "Maven.simpleWebApplication [deploy].executor": "Run",
-    "Maven.simpleWebApplication [install].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.SimpleWebApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Расул/IdeaProjects/untitled5/IT2-2203-Web-Component-Development-Java-EE",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Расул\Downloads\simpleWebApplication\simpleWebApplication\src\main\resources" />
+      <recent name="D:\Toar" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="simpleWebApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="simpleWebApplication" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SimpleWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="simpleWebApplication" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rassul.simpleWebApplication.SimpleWebApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -112,18 +63,39 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="afbcb72d-6f7f-43bb-b5df-c050de0f83a9" name="Changes" comment="" />
-      <created>1725446379196</created>
+      <changelist id="cbc7f782-69b7-4cd4-bc54-5c9026c6b4c9" name="Changes" comment="" />
+      <created>1730895145515</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1725446379196</updated>
-      <workItem from="1728229663267" duration="292000" />
-      <workItem from="1728233558381" duration="3205000" />
-      <workItem from="1729277739297" duration="185000" />
+      <updated>1730895145515</updated>
+      <workItem from="1730895146753" duration="747000" />
+      <workItem from="1730897112826" duration="453000" />
     </task>
+    <task id="LOCAL-00001" summary="refactoring and reoptimizing the front package jsons, devided to Back and Front ends">
+      <option name="closed" value="true" />
+      <created>1730897490191</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730897490191</updated>
+    </task>
+    <task id="LOCAL-00002" summary="unversion files update">
+      <option name="closed" value="true" />
+      <created>1730897511416</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730897511416</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactoring and reoptimizing the front package jsons, devided to Back and Front ends" />
+    <MESSAGE value="unversion files update" />
+    <option name="LAST_COMMIT_MESSAGE" value="unversion files update" />
   </component>
 </project>
