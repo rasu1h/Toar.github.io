@@ -20,7 +20,7 @@ public class ProductService {
     public List<Product> getProduct(){
         return repo.findAll();
     }
-    public Product gerProductById(int prodId) {
+    public Product getProductById(int prodId) {
         return repo.findById(prodId).orElseThrow(()->  new ResourceNotFoundException("Product not found with id: \"" + prodId));
     }
 
@@ -32,8 +32,17 @@ public class ProductService {
         return  repo.save(prod);
     }
 
-    public void updateProduct(int prodId) {
-     repo.save(gerProductById(prodId));
+    public Product updateProduct(int prodId, Product productDetails) {
+        Product product = getProductById(prodId);
+        if (product != null) {
+            // Update fields here
+            product.setName(productDetails.getName());
+            product.setDescription(productDetails.getDescription());
+            product.setPrice(productDetails.getPrice());
+            // Other fields to update
+            return repo.save(product);
+        }
+        throw new RuntimeException("Product not found");
     }
     public void deleteProduct(int prodId){
       repo.deleteById(prodId);
