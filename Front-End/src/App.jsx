@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from './Components/Header.jsx'; // Убедитесь, что файл Header.jsx существует
@@ -9,6 +10,7 @@ import Cart from "./Components/Cart.jsx"
 import UpdateProduct from "./Components/UpdateProduct.jsx";
 import "./styles/app.css";
 
+
 function App() {
   return (
     <>
@@ -16,16 +18,17 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Product />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/product/:id" element={<ProductDetails />}>
+              <Route path="update" element={<UpdateProduct/>} />
+          </Route>
           <Route path="/add_product" element={<AddProduct />} />
           <Route path="/products" element={<Product  />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/product/update/:id" element={<UpdateProduct />} />
         </Routes>
       </Router>
-      <Footer />
-    </>
-  );
-}
+        <Footer/>
+   </>
+      );
+        }
 
 export default App;

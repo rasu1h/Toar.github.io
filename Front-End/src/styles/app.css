@@ -23,7 +23,7 @@
     nav ul {
         list-style-type: none; /* Убираем маркеры списка */
         padding: 0;
-        margin: 0 , 0;
+        margin: 0;
     }
 
     /* Стили для элементов списка */
@@ -44,36 +44,30 @@
     nav ul li a:hover {
         color: #FFD700; /* Цвет текста при наведении */
     }
-    #grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        grid-gap: 2vw;
-    }
-    
-    #grid > div {
-        font-size: 5vw;
-        padding: 0.5em;
-        background: rgb(175, 15, 239);
-        text-align: center;
-    }
-    
-    /* Стили для компонента продукта */
-    .product {
-        padding: 1em;
-        border: 1px solid #c23e3e;
-        text-align: center;
-        border-radius: 5px;
-    }
-    
-    .product h2 {
-        font-size: 18px;
-        margin: 10px;
-    }
-    .product:hover h2{
-        transform: translateY(2px);
-    }
-    
-    .product p {
-        font-size: 14px;
-    }
-    
+     #product-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+         gap: 20px;
+         padding: 20px;
+     }
+
+     .product-item {
+         background: #f9f9f9;
+         padding: 15px;
+         border: 1px solid #ddd;
+         border-radius: 8px;
+         text-align: center;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         transition: transform 0.2s;
+     }
+
+     .product-item:hover {
+         transform: scale(1.05);
+     }
+
+     .product-image {
+         max-width: 100%;
+         height: auto;
+         border-radius: 4px;
+         margin-bottom: 10px;
+     }

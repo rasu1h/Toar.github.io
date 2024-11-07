@@ -1,62 +1,56 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Хук для навигации
+// eslint-disable-next-line no-unused-vars
+import React, { useEffect, useState,} from 'react';
+import {useNavigate} from "react-router-dom";
+import axios from 'axios';
 
-function Product() {
+
+const Product = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const navigate = useNavigate(); // Используем useNavigate для перенаправления
-
+    const navigate = useNavigate();
     const fetchProducts = async () => {
         setLoading(true);
         try {
             const response = await axios.get("http://localhost:8080/api/products");
-            setProducts(response.data);
+            const productsWithImages = await Promise.all(
+                response.data.map(async (product) => {
+                    try {
+                        const imageResponse = await axios.get(`http://localhost:8080/api/products/${product.id}/image`, {responseType: "blob"});
+                        const imageUrl = URL.createObjectURL(imageResponse.data);
+                        return {...product, imageUrl};
+                    } catch (imageError) {
+                        console.error(`Failed to fetch image for product ${product.id}:`, imageError);
+                        return {...product, imageUrl: null};  // Handle missing images gracefully
+                    }
+                })
+            );
+            setProducts(productsWithImages);
         } catch (error) {
-            setError("Не удалось получить продукты");
+            console.error("Failed to fetch products:", error);
+            setError("Не удалось получить продукты и изображения");
         } finally {
             setLoading(false);
         }
     };
-
+    const handleClick = (id) => {
+        navigate(`/${id}`);  // Навигация на страницу продукта
+    };
     useEffect(() => {
         fetchProducts();
     }, []);
+    return (<div id="product-grid">
 
-    // Функция для обработки клика по продукту и перенаправления
-    const handleClick = (product) => {
+        {loading && <p>Загрузка...</p>}
+        {error && <p>{error}</p>}
 
-        navigate(`/product/${product.id}`); // Перенаправление на страницу с подробностями продукта
-    };
-    
+        { products.map(product =>
+            (<div key={product.id} className="product-item" onClick={() => handleClick(product.id)} >
+                <img src={product.imageUrl} alt={product.name} className="product-image"/>
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+            </div>))}
+    </div>);
 
-    if (loading) {
-        return <p>Загрузка...</p>;
-    }
-
-    if (error) {
-        return <p>{error}</p>;
-    }
-
-    return (
-        <div id="grid">
-            {products.length > 0 ? (
-                products.map((product) => (
-                    <div
-                        key={product.id}
-                        className="product"
-                        onClick={() => handleClick(product)} // Обработка клика
-                        style={{ cursor: "pointer", padding: "10px", background: "#eee", margin: "10px" }}
-                    >
-                        <h2>{product.name}</h2>
-                    </div>
-                ))
-            ) : (
-                <p>Нет доступных продуктов</p>
-            )}
-        </div>
-    );
 }
-
 export default Product;
