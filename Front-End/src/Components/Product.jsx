@@ -1,10 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState,} from 'react';
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useLocation} from "react-router-dom";
 import axios from 'axios';
 
 
 const Product = () => {
+    const location = useLocation();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -34,7 +35,11 @@ const Product = () => {
         }
     };
     const handleClick = (id) => {
-        navigate(`/${id}`);  // Навигация на страницу продукта
+        if (location.pathname === "/") {
+            navigate(`products/${id}`); // Навигация на страницу продукта из главной страницы
+        } else {
+            navigate(`/${id}`); // Навигация на страницу продукта из других страниц
+        }
     };
     useEffect(() => {
         fetchProducts();

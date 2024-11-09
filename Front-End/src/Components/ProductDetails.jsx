@@ -1,20 +1,25 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function ProductDetails() {
-    const { id } = useParams(); // Get product ID from route parameters
+    const { id } = useParams(); // Получаем ID из параметров маршрута
     const [product, setProduct] = useState(null);
+    const [imageUrl, setImageUrl] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [imageUrl, setImageUrl] = useState(null); // State for image URL
 
     const fetchProduct = async () => {
+        const productId = parseInt(id, 10); // Преобразуем строку в целое число
+
+        if (isNaN(productId)) {
+            setError("Некорректный идентификатор продукта");
+            return;
+        }
+
         setLoading(true);
         try {
-            // Fetch product details
-            const response = await axios.get(`http://localhost:8080/api/products/${id}`);
+            const response = await axios.get(`http://localhost:8080/api/products/${productId}`);
             const productData = response.data;
 
             // Fetch product image
@@ -23,15 +28,14 @@ function ProductDetails() {
                     `http://localhost:8080/api/products/${productData.id}/image`,
                     { responseType: "blob" }
                 );
-                const imageUrl = URL.createObjectURL(imageResponse.data); // Create image URL from blob
+                const imageUrl = URL.createObjectURL(imageResponse.data);
                 setImageUrl(imageUrl);
             } catch (imageError) {
-                console.error(`Failed to fetch image for product ${productData.id}:`, imageError);
-                setImageUrl(null); // Handle missing image gracefully
+                console.error(`Не удалось загрузить изображение для продукта ${productData.id}:`, imageError);
+                setImageUrl(null);
             }
 
-            setProduct(productData); // Set product data
-            // eslint-disable-next-line no-unused-vars
+            setProduct(productData);
         } catch (error) {
             setError("Не удалось загрузить информацию о продукте");
         } finally {
@@ -40,7 +44,9 @@ function ProductDetails() {
     };
 
     useEffect(() => {
-        fetchProduct(); // Fetch data on component mount
+        if (id) {
+            fetchProduct();
+        }
     }, [id]);
 
     if (loading) {

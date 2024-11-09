@@ -1,34 +1,39 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from './Components/Header.jsx'; // Убедитесь, что файл Header.jsx существует
-import Product from "./Components/Product.jsx"; // Убедитесь, что файл Product.jsx существует
-import ProductDetails from "./Components/ProductDetails.jsx"; // Импорт компонента деталей продукта
-import Footer from "./Components/Footer.jsx"; // Убедитесь, что файл Footer.jsx существует
+import Header from './Components/Header.jsx';
+import Product from "./Components/Product.jsx";
+import ProductDetails from "./Components/ProductDetails.jsx";
+import Footer from "./Components/Footer.jsx";
 import AddProduct from "./Components/AddProduct.jsx";
-import Cart from "./Components/Cart.jsx"
+import Cart from "./Components/Cart.jsx";
 import UpdateProduct from "./Components/UpdateProduct.jsx";
 import "./styles/app.css";
 
-
 function App() {
-  return (
-    <>
-      <Header />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Product />} />
-          <Route path="/product/:id" element={<ProductDetails />}>
-              <Route path="update" element={<UpdateProduct/>} />
-          </Route>
-          <Route path="/add_product" element={<AddProduct />} />
-          <Route path="/products" element={<Product  />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </Router>
-        <Footer/>
-   </>
-      );
-        }
+    return (
+        <Router>
+            <Header />
+            <Routes>
+                {/* Главная страница */}
+                <Route path="/" element={<Product />} />
+
+                {/* Страница со списком продуктов */}
+                <Route path="/products" element={<Product />} />
+
+                {/* Страница с деталями продукта */}
+                <Route path="/products/:id" element={<ProductDetails />} />
+
+                {/* Страница добавления продукта */}
+                <Route path="/add_product" element={<AddProduct />} />
+
+                {/* Страница корзины */}
+                <Route path="/cart" element={<Cart />} />
+
+                {/* Страница обновления продукта, вложена в ProductDetails */}
+                <Route path="/products/:id/update" element={<UpdateProduct />} />
+            </Routes>
+            <Footer />
+        </Router>
+    );
+}
 
 export default App;
