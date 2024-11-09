@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rassul</groupId>
-	<artifactId>simpleWebApplication</artifactId>
+	<artifactId>Back-End</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>simpleWebApplication</name>
 	<description>Demo project for Spring Boot</description>
