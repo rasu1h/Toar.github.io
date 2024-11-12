@@ -30,17 +30,6 @@ public class ProductController {
         return product != null ? new ResponseEntity<>(product, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/products/{prodId}/image")
-    public ResponseEntity<byte[]> getImageProductId(@PathVariable int prodId) {
-        Product product = service.getProductById(prodId);  // Fixed method name typo
-        if (product != null && product.getImageData() != null) {
-            byte[] imageFile = product.getImageData();
-            return ResponseEntity.ok()
-                    .contentType(MediaType.valueOf(product.getImageType()))
-                    .body(imageFile);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
 
     @PostMapping("/products/add_product")
     public ResponseEntity<?> addProduct(@RequestPart Product prod, @RequestPart MultipartFile imageFile) {
