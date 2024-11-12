@@ -19,6 +19,7 @@ public class ProductController {
     @Autowired
     ProductService service;
 
+
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getAllProducts() {
         return new ResponseEntity<>(service.getProduct(), HttpStatus.OK);
@@ -34,7 +35,8 @@ public class ProductController {
     @PostMapping("/products/add_product")
     public ResponseEntity<?> addProduct(@RequestPart Product prod, @RequestPart MultipartFile imageFile) {
         try {
-            Product savedProduct = service.addProduct(prod, imageFile);
+            String fileUrl = service.uploadFile(imageFile);
+            Product savedProduct = service.addProduct(prod, fileUrl);
             return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
