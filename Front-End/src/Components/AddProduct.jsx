@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -8,12 +7,12 @@ const AddProduct = () => {
     brand: "",
     description: "",
     price: "",
-    Category: "",
+    category: "", // Corrected capitalization
     quantity: "",
     releaseDate: "",
     available: false,
   });
-  const [image, setImage] = useState(null);
+  const [imageFile, setImage] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,33 +21,29 @@ const AddProduct = () => {
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
-    // setProduct({...product, image: e.target.files[0]})
   };
 
-  const submitHandler = (event) => {
-    event.preventDefault();
+  const submitHandler = async (e) => {
+    e.preventDefault();
+
     const formData = new FormData();
+    formData.append("prod", new Blob([JSON.stringify(product)], { type: "application/json" }));
+    formData.append("imageFile", imageFile); // Передаем файл
 
-    formData.append(
-      "prod",
-      new Blob([JSON.stringify(product)], { type: "application/json" })
-    );
-    formData.append("imageFile", image);
-    axios
-      .post("http://localhost:8080/api/products/add_product", formData, {
+    try {
+      const response = await axios.post("http://localhost:8080/api/products/add_product", formData, {
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "multipart/form-data", // Этот заголовок устанавливается автоматически Axios при использовании FormData
         },
-      })
-      .then((response) => {
-        console.log("Product added successfully:", response.data);
-        alert("Product added successfully");
-      })
-      .catch((error) => {
-        console.error("Error adding product:", error);
-        alert("Error adding product");
       });
+      console.log("Product added successfully:", response.data);
+    } catch (error) {
+      console.error("Error adding product:", error);
+      alert(`Failed to add product! ${error}`);
+    }
   };
+
+
 
   return (
     <div className="container">

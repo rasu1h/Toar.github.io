@@ -3,41 +3,24 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function ProductDetails() {
-    const { id } = useParams(); // Получаем ID из параметров маршрута
+    const {id} = useParams();
     const [product, setProduct] = useState(null);
-    const [imageUrl, setImageUrl] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [isImageLoading, setIsImageLoading] = useState(true);
 
     const fetchProduct = async () => {
-        const productId = parseInt(id, 10); // Преобразуем строку в целое число
-
-        if (isNaN(productId)) {
-            setError("Некорректный идентификатор продукта");
-            return;
-        }
+        const productId = parseInt(id, 10);
 
         setLoading(true);
+        setError(null);
+
         try {
             const response = await axios.get(`http://localhost:8080/api/products/${productId}`);
             const productData = response.data;
-
-            // Fetch product image
-            try {
-                const imageResponse = await axios.get(
-                    `http://localhost:8080/api/products/${productData.id}/image`,
-                    { responseType: "blob" }
-                );
-                const imageUrl = URL.createObjectURL(imageResponse.data);
-                setImageUrl(imageUrl);
-            } catch (imageError) {
-                console.error(`Не удалось загрузить изображение для продукта ${productData.id}:`, imageError);
-                setImageUrl(null);
-            }
-
             setProduct(productData);
-        } catch (error) {
-            setError("Не удалось загрузить информацию о продукте");
+        } catch (err) {
+            setError(err.response?.data?.message || "Не удалось загрузить информацию о продукте");
         } finally {
             setLoading(false);
         }
@@ -49,19 +32,37 @@ function ProductDetails() {
         }
     }, [id]);
 
-    if (loading) {
-        return <p>Загрузка...</p>;
-    }
-
-    if (error) {
-        return <p>{error}</p>;
-    }
+    if (loading) return <p>Загрузка...</p>;
+    if (error) return <p>{error}</p>;
 
     return (
         <div>
             {product ? (
                 <div>
-                    {imageUrl ? <img src={imageUrl} alt={product.name} /> : <p>Загрузка изображения...</p>}
+                    {product.imageUrl ? (
+                        <>
+                            <img
+                                src={product.imageUrl}
+                                alt={product.name}
+                                onLoad={() => setIsImageLoading(false)}
+                                onError={() => {
+                                    setIsImageLoading(false);
+                                }}
+                            />
+                            {isImageLoading && <p>Загрузка изображения...</p>}
+                        </>
+                    ) : (
+                        <div style={{
+                            width: "200px",
+                            height: "200px",
+                            backgroundColor: "#ddd",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center"
+                        }}>
+                            <p>Изображение недоступно</p>
+                        </div>
+                    )}
                     <h2>{product.name}</h2>
                     <p>{product.description}</p>
                     <p>Цена: {product.price}</p>
@@ -73,4 +74,4 @@ function ProductDetails() {
     );
 }
 
-export default ProductDetails;
+    export default ProductDetails;

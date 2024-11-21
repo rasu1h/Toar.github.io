@@ -16,28 +16,7 @@ const navigate = useNavigate();
             // Если длина строки больше или равна 1, делаем запрос на сервер
             try {
                 const response = await axios.get(`http://localhost:8080/api/products/search?keyword=${value}`);
-                const data = response.data;
-
-                // Проверяем, является ли data массивом
-                if (Array.isArray(data)) {
-                    const productsWithImages = await Promise.all(
-                        data.map(async (product) => {
-                            try {
-                                // Получаем изображение для каждого продукта
-                                const imageResponse = await axios.get(`http://localhost:8080/api/products/${product.id}/image`, { responseType: "blob" });
-                                const imageUrl = URL.createObjectURL(imageResponse.data);
-                                return { ...product, imageUrl }; // Добавляем изображение в продукт
-                            } catch (imageError) {
-                                console.error(`Не удалось получить изображение для продукта ${product.id}:`, imageError);
-                                return { ...product, imageUrl: null }; // Если изображение не найдено
-                            }
-                        })
-                    );
-                    setSuggestions(productsWithImages); // Обновляем подсказки
-                } else {
-                    console.error("Ожидался массив, но сервер вернул не массив:", data);
-                    setSuggestions([]); // Очищаем подсказки, если данные не в формате массива
-                }
+               setSuggestions(response.data);
             } catch (error) {
                 console.error("Ошибка при поиске:", error);
             }
